@@ -27,7 +27,7 @@ const getUserById = ((req, res) => {
     if (!usuario) return res.json({status: 404, message: "Usuario no encontrado"})
 
     /* si encuentro */
-    res.json(usuarios)
+    res.json(usuario)
 })
 
 // post 
@@ -67,12 +67,12 @@ const updateUser = ((req, res) => {
     if (!usuario) return res.json({status: 404, message: "Usuario no encontrado"})
     
     /* desestructuro el objeto para manejarlo */
-    const {nombre, email, edad} = req.body
+    const {name, email, age} = req.body
     
     /* creo el nuevo usuario */
-    usuario.nombre = nombre || usuario.nombre 
+    usuario.name = name || usuario.name 
     usuario.email = email || usuario.email
-    usuario.edad = edad || usuario.edad
+    usuario.age = age || usuario.age
 
     writeUsers(usuarios)
     

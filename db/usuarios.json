@@ -3,7 +3,7 @@
     "id": 1,
     "name": "joako",
     "email": "savinijoaquin@gmail.com",
-    "age": 21
+    "age": 26
   },
   {
     "id": 2,
@@ -14,25 +14,15 @@
   {
     "name": "agus",
     "email": "agus@gmail.com",
-    "age": 25,
-    "id": 3
-  },
-  {
-    "name": "tomas",
-    "email": "tomi@gmail.com",
-    "age": 44,
-    "id": 4
-  },
-  {
-    "name": "agus",
-    "email": "agusss@gmail.com",
-    "age": 25,
-    "id": 5
+    "age": 23,
+    "id": 4,
+    "nombre": "agus",
+    "edad": 23
   },
   {
     "name": "agus",
     "email": "agusknj@gmail.com",
-    "age": 25,
-    "id": 6
+    "age": 23,
+    "id": 4
   }
 ]
