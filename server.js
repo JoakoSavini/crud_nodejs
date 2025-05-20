@@ -8,7 +8,7 @@ const userRouter = require('./routes/usuarios.routes')
 app.use('/usuarios', userRouter)
 
 const productRouter = require('./routes/products.routes')
-app.use('productos', productRouter)
+app.use('/productos', productRouter)
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en ${port}`)
