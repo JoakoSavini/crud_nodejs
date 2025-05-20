@@ -16,7 +16,7 @@ const writeProducts = (productos) => {
 
 // get 
 const getProducts = ((req, res) => {
-    res.json({data: productos, status:200, message: 'Productos obtenidos exitosamente'})
+    res.json(productos)
 })
 
 // get por id 
@@ -27,18 +27,18 @@ const getProductById = ((req, res) => {
     if (!producto) return res.json({status: 404, message: "producto no encontrado"})
 
     /* si encuentro */
-    res.json({data: producto, status:200, message: 'producto obtenido exitosamente'})
+    res.json(productos)
 })
 
 // post 
 const createProduct = ((req, res) => {
     const nuevoproducto = req.body
 
-    const precio = nuevoproducto.precio
+    const price = nuevoproducto.price
 
-    // Validar que el precio no esté vacío o incompleto 
-    if (!precio || precio === null || precio === undefined ||  precio < 1) {
-        return res.status(400).json({ status: 400, message: "El Precio está vacío o es incorrecto" })
+    // Validar que el price no esté vacío o incompleto 
+    if (!price || price === null || price === undefined ||  price < 1) {
+        return res.status(400).json({ status: 400, message: "El price está vacío o es incorrecto" })
     }
 
 
@@ -47,7 +47,7 @@ const createProduct = ((req, res) => {
     productos.push(nuevoproducto)
     writeProducts(productos)
 
-    res.json({data: nuevoproducto, status: 201, message: "Producto agregado correctamente"})
+    res.json(productos)
 })
 
 // put 
@@ -59,15 +59,15 @@ const updateProduct = ((req, res) => {
     if (!producto) return res.json({status: 404, message: "Producto no encontrado"})
     
     /* desestructuro el objeto para manejarlo */
-    const {nombre, precio} = req.body
+    const {name, price} = req.body
     
     /* creo el nuevo producto */
-    producto.nombre = nombre || producto.nombre 
-    producto.precio = precio || producto.precio
+    producto.name = name || producto.name 
+    producto.price = price || producto.price
 
     writeProducts(productos)
     
-    res.json({data: producto, status: 201, message: "Producto editado correctamente"})
+    res.json(productos)
 })
 
 // delete  
@@ -82,7 +82,7 @@ const deleteProduct = ((req,res) => {
 
     writeProducts(productos)
 
-    res.json({status:201, message:"Producto eliminado correctamente"})
+    res.json(productos)
 })
 
 

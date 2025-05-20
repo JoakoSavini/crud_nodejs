@@ -16,7 +16,7 @@ const writeUsers = (usuarios) => {
 
 // get 
 const getUsers = ((req, res) => {
-    res.json({data: usuarios, status:200, message: 'Usuarios obtenidos exitosamente'})
+    res.json(usuarios)
 })
 
 // get por id 
@@ -27,7 +27,7 @@ const getUserById = ((req, res) => {
     if (!usuario) return res.json({status: 404, message: "Usuario no encontrado"})
 
     /* si encuentro */
-    res.json({data: usuario, status:200, message: 'Usuario obtenidos exitosamente'})
+    res.json(usuarios)
 })
 
 // post 
@@ -55,7 +55,7 @@ const createUser = ((req, res) => {
     usuarios.push(nuevoUsuario)
     writeUsers(usuarios)
 
-    res.json({data: nuevoUsuario, status: 201, message: "Usuario agregado correctamente"})
+    res.json(usuarios)
 })
 
 // put 
@@ -76,7 +76,7 @@ const updateUser = ((req, res) => {
 
     writeUsers(usuarios)
     
-    res.json({data: usuario, status: 201, message: "Usuario editado correctamente"})
+    res.json(usuarios)
 })
 
 // delete  
@@ -91,7 +91,7 @@ const deleteUser = ((req,res) => {
 
     writeUsers(usuarios)
 
-    res.json({status:201, message:"Usuario eliminado correctamente"})
+    res.json(usuarios)
 })
 
 
